@@ -1,0 +1,51 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use App::DreamObjects;
+
+my $app = App::DreamObjects->new();
+
+$app->parse_options( @ARGV );
+
+$app->run();
+
+__END__
+
+=head1 NAME
+
+dobj - uploads a file to dreamobjects cloud
+
+=head1 SYNOPSIS
+
+This command, given that the configuration file is filled will
+upload a file to dreamhost objects
+
+    dobj /home/user/importantfile
+
+=head1 CONFIGURATION
+
+The command reads the file on the home of user: ~/.dobjconfig
+
+The file is a a key value file that has two keys:
+
+access_key Access Key of User
+secret_key Secret Key of the user
+
+The upload will always take the first bucket from a given account
+
+=head1 SEE ALSO
+
+L<App::DreamObjects>
+
+=head1 COPYRIGHT
+
+Copyright 2010 Frederico Recsky
+
+=head1 AUTHOR
+
+Frederico Recsky
+
+=cut
+
